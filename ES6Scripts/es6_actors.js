@@ -23,7 +23,7 @@ let academyMembers = [
     },
 ];
 
-/* member whose id is 187
+//member whose id is 187
 let findAcademyMember = academyMembers.find((array) => array.memID == "187");
 if (findAcademyMember != undefined) {
     console.log("Member with a memID of 187 is " + findAcademyMember.name)
@@ -39,7 +39,7 @@ let nameThatStarts = academyMembers.filter((array) => array.name.indexOf("Bob") 
 for (let i = 0; i < nameThatStarts.length; i++) {
     console.log("Name that starts with Bob: " + nameThatStarts[i].name)
 }
-*/
+
 // Which Academy Members have been in a film that starts with "A";
 let findFilm = academyMembers.filter((array) => array.films.length > 0);
 for (let i = 0; i < findFilm.length; i++) {
