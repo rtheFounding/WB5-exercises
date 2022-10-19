@@ -69,3 +69,8 @@ for (let i = 0; i < findFilm.length; i++) {
         }
     }
 } 
+
+// or
+
+let titles = academyMembers.filter(m => m.films.filter(t => t.startsWith("A")).length > 0);
+titles.forEach(m => console.log("Has Films that start with A: " + m.name))
