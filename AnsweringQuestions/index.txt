@@ -1,0 +1,15 @@
+Exercise 1
+
+let objSet1 = document.querySelectorAll("p");
+// selects all <p>
+
+let objSet2 = document.querySelectorAll(".attn");
+// selects all elemnts with class="attn
+let objSet3 = document.querySelectorAll("p.attn");
+// selects all <p> elements with class="attn"
+let objSet4 = document.querySelectorAll("img[alt="myImage"]");
+// select <img> element with a alt myImage
+let objSet4 = document.querySelectorAll("div > p");
+// Selects all <p> elements where the parent is a <div> element 
+let objSet5 = document.querySelectorAll("div, span");
+// Selects all <div> elements and all <span> elements
