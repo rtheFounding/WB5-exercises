@@ -68,9 +68,18 @@ for (let i = 0; i < findFilm.length; i++) {
             console.log("Academy Members that have been in a film that starts with A: " + findFilm[i].name)
         }
     }
-} 
+}
 
 // or
+function hasFilmA(member) {
+    return member.films.filter(title => title.startsWith("A")).length > 0;
+}
+function printMatch(member) {
+    console.log("Has > 0 films starting with A", member.name)
+}
+let matches = academyMembers.filter(hasFilmA);
+matches.forEach(printMatch);
 
+// or
 let titles = academyMembers.filter(m => m.films.filter(t => t.startsWith("A")).length > 0);
 titles.forEach(m => console.log("Has Films that start with A: " + m.name))
