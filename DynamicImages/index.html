@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="imageList"></select>
+    <button id="add">Add image</button>
+    <button id="clear">Clear All</button>
+    <div id="display"></div>
+</body>
+<script>
+    const imagesFiles = [
+        {
+            title: "Twenty One Pilots",
+            name: "images/37a_twentyonepilots20184237.jpeg",
+            alt: "image1",
+            description: "Just some text"
+        },
+        {
+            title: "Blue Lock",
+            name: "images/BlueLock_YoichiIsagi2-1600x900-1-1024x576.jpg",
+            alt: "image2",
+            description: "Just some text for the second one"
+        }
+
+    ]
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const imageList = document.getElementById("imageList");
+        const add = document.getElementById("add");
+        const clear = document.getElementById("clear");
+        const display = document.getElementById("display");
+        imagesFiles.forEach(image => {
+            const option = document.createElement("option");
+            option.innerHTML = image.title;
+            option.value = image.name;
+            option.setAttribute("alt", image.alt);
+            imageList.appendChild(option);
+        });
+        add.addEventListener("click", (e) => {
+            const display = document.getElementById("display");
+            const item = imageList.selectedOptions[0];
+            const img = document.createElement("img");
+            img.src = item.value;
+            img.style.objectFit = "contain";
+            img.style.width = "300px";
+            img.style.height = "200px";
+            display.innerHTML = item.text;
+
+            display.appendChild(img);
+        });
+        clear.addEventListener("click", (e) => {
+            display.innerHTML = ""; //clear everything on display area.
+        })
+
+    })
+</script>
+
+</html>
