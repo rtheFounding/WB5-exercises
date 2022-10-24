@@ -19,14 +19,12 @@
         {
             title: "Twenty One Pilots",
             name: "images/37a_twentyonepilots20184237.jpeg",
-            alt: "image1",
-            description: "Just some text"
+            alt: "image1"
         },
         {
             title: "Blue Lock",
             name: "images/BlueLock_YoichiIsagi2-1600x900-1-1024x576.jpg",
-            alt: "image2",
-            description: "Just some text for the second one"
+            alt: "image2"
         }
 
     ]
@@ -44,14 +42,15 @@
             imageList.appendChild(option);
         });
         add.addEventListener("click", (e) => {
-            const display = document.getElementById("display");
+            //const display = document.getElementById("display");
             const item = imageList.selectedOptions[0];
             const img = document.createElement("img");
+            img.innerHTML = item.text;
             img.src = item.value;
             img.style.objectFit = "contain";
             img.style.width = "300px";
             img.style.height = "200px";
-            display.innerHTML = item.text;
+            //display.innerHTML = item.text;
 
             display.appendChild(img);
         });
